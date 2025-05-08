@@ -78,8 +78,11 @@ need to predict one character for each step in the game of Hangman. I took a gre
 approach and considering only the masked characters took the character with the maximum 
 probability. 
 
-# Result
+# Results
 After validating my approach and achieving an above-par performance (66%), I retrained the 
 model on the entire dataset with the same setup and ran on the API provided to get an 
 accuracy of 62% on the practice setup using this specific setup and 60% on the recorded 
 games. 
+
+![Loss Progession](loss_progression.png)
+
