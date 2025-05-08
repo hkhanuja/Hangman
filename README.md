@@ -41,8 +41,8 @@ pooling)
 * Focal Loss - this basically assigns a higher loss to infrequent characters such as ‘q’, 
 ‘x’ and lower loss to frequent characters like ‘a’ and ‘e’. The frequency was calculated 
 using the training set. 
-* **Cross Entropy loss combined with n-gram prediction when the word is almost 
-predicted (3 characters or less remaining to be predicted) **
+* __Cross Entropy loss combined with n-gram prediction when the word is almost 
+predicted (3 characters or less remaining to be predicted)__
 * Reinforcement Learning with BERT model as the policy 
 * Reinforcement Learning with BERT model as the policy and custom rewards 
 depending on the character frequency (higher reward for infrequent characters) 
