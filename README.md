@@ -48,3 +48,38 @@ predicted (3 characters or less remaining to be predicted)__
 depending on the character frequency (higher reward for infrequent characters) 
 
 The highlighted approach gives the best results.
+
+
+My training setup included finetuning the last 2 encoder layers of the BERT model with a 
+learning rate of 3e-5, a cosine learning rate scheduler with a warmup of 10%, AdamW 
+optimizer with a weight decay of 0.01. The guessed vector was provided to the BERT model 
+in the beginning to ensure that the model learns to negate the effects of those characters 
+while predicting the next character. 
+
+When testing this approach I achieved an accuracy of 61% accuracy in winning the 
+hangman game with words from my validation set. Upon initial analysis the model did not 
+perform well with words involving the character ‘q’ and failed even with simple words like 
+‘queue’ and ‘squid’, highlighting the importance of training dataset quality in training BERT. I 
+tried different approaches to counter that problem such as focal loss and Custom Reward 
+Reinforcement Learning setup, however they did not result in significantly better results.  
+
+# N-Gram approach
+For further performance improvement I decided to combine the n-gram approach with the 
+BERT approach during evaluation.I created three different dictionaries, one trigram 
+dictionary and two bigrams dictionary. During the last stages of evaluation, when there are 
+only three or less characters remaining to be predicted, we consider the letter to the left and 
+right of each masked word and get the probability of each character from our dictionary. The 
+reason to have two bigram dictionaries is to ensure in cases when the masked character is 
+the first letter or the last letter of the word, or two consecutive letters are masked, I can still 
+utilize this approach by considering the bigram dictionary. I took the weighted sum of these 
+probabilities along with the probabilities from the BERT model to get the final probabilities. 
+While BERT simultaneously provides a prediction for all the masked characters, we only 
+need to predict one character for each step in the game of Hangman. I took a greedy 
+approach and considering only the masked characters took the character with the maximum 
+probability. 
+
+# Result
+After validating my approach and achieving an above-par performance (66%), I retrained the 
+model on the entire dataset with the same setup and ran on the API provided to get an 
+accuracy of 62% on the practice setup using this specific setup and 60% on the recorded 
+games. 
