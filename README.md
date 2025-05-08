@@ -86,3 +86,26 @@ games.
 
 ![Loss Progession](loss_progression.png)
 
+# Reproducibility
+
+1. **Clone the repository**
+   ```
+   git clone https://github.com/yourusername/your-repo.git
+   cd your-repo
+   ```
+2. **Finetune the BERT model**
+   ```
+   cd bert_ce
+   python bert_ce.py (to get the finetuned model weights)
+   ```
+
+3. **Evaluate using N-gram + BERT approach**
+   ```
+   cd bert_ce
+   python bert_ce_evaluation_with_n_gram.py
+   ```
+
+# Future work
+
+Given the limited dataset size, focal loss offers significant advantages in addressing class imbalance and hard-to-classify examples. A strategy that integrates fine-tuning BERT with focal loss and fuses its predictions with an n-gram based approach at inference is likely to enhance overall accuracy and robustness.
+   
