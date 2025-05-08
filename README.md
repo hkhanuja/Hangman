@@ -32,19 +32,19 @@ words in a sentence.
 I tried several approaches with the BERT and Canine-S architecture. Canine-S model is 
 similar to BERT but instead of word embeddings it was trained on character level 
 embeddings. I did 16-20 experiments with different losses, architectures and training setups: 
-● Cross Entropy loss over all masked characters 
-● Cross Entropy loss over the mean of the output logits of all masked characters (mean 
+* Cross Entropy loss over all masked characters 
+* Cross Entropy loss over the mean of the output logits of all masked characters (mean 
 pooling) 
-● Cross Entropy loss over the maximum of the output logits of all masked characters 
+* Cross Entropy loss over the maximum of the output logits of all masked characters 
 (max pooling) 
-● KL Divergence loss 
-● Focal Loss - this basically assigns a higher loss to infrequent characters such as ‘q’, 
+* KL Divergence loss 
+* Focal Loss - this basically assigns a higher loss to infrequent characters such as ‘q’, 
 ‘x’ and lower loss to frequent characters like ‘a’ and ‘e’. The frequency was calculated 
 using the training set. 
-● **Cross Entropy loss combined with n-gram prediction when the word is almost 
+* **Cross Entropy loss combined with n-gram prediction when the word is almost 
 predicted (3 characters or less remaining to be predicted) **
-● Reinforcement Learning with BERT model as the policy 
-● Reinforcement Learning with BERT model as the policy and custom rewards 
+* Reinforcement Learning with BERT model as the policy 
+* Reinforcement Learning with BERT model as the policy and custom rewards 
 depending on the character frequency (higher reward for infrequent characters) 
 
 The highlighted approach gives the best results.
