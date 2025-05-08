@@ -1,19 +1,11 @@
 # Hangman
 
-## 📌 What is Hangman?
+## What is Hangman?
 
-**Hangman** is a classic word guessing game where the player tries to guess a hidden word one letter at a time.  
-Each incorrect guess results in a part of a stick figure being drawn.  
-The game ends when the player either correctly guesses the word or the figure is fully drawn (indicating too many incorrect guesses).
+**Hangman** is a classic word-guessing game where the player attempts to uncover a hidden word by suggesting letters one at a time.  
+Each incorrect guess results in a part of a stick figure being drawn on a gallows.  
+The game concludes when the player either successfully guesses the word or the stick figure is fully drawn, indicating too many incorrect guesses.
 
-```
- _______
- |     |
- |     O
- |    /|\
- |    / \
- |
-_|_
-```
+![Hangman Illustration](https://steve-lovelace.com/wp-content/uploads/2013/09/hangman-stick-figure.jpg)
+*Illustration of a Hangman figure after several incorrect guesses.*
 
-*Example Hangman figure after several incorrect guesses.*
