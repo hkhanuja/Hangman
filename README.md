@@ -93,10 +93,10 @@ games.
    git clone https://github.com/yourusername/your-repo.git
    cd your-repo
    ```
-2. **Finetune the BERT model**
+2. **Finetune the BERT model (to get the finetuned model weights)**
    ```
    cd bert_ce
-   python bert_ce.py (to get the finetuned model weights)
+   python bert_ce.py
    ```
 
 3. **Evaluate using N-gram + BERT approach**
