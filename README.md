@@ -90,7 +90,7 @@ games.
 
 1. **Clone the repository**
    ```
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/hkhanuja/Hangman.git
    cd your-repo
    ```
 2. **Finetune the BERT model (to get the finetuned model weights)**
