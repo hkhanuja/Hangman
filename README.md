@@ -88,10 +88,13 @@ games.
 
 # Reproducibility
 
-1. **Clone the repository**
+1. **Clone the repository in a conda environment**
    ```
    git clone https://github.com/hkhanuja/Hangman.git
    cd your-repo
+   conda create -n env_name python=3.10
+   conda activate env_name
+   pip install -r requirements.txt
    ```
 2. **Finetune the BERT model (to get the finetuned model weights)**
    ```
